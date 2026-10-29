@@ -1,0 +1,36 @@
+@import './tokens.css';
+
+.webhooks__intro {
+  color: var(--paper-200);
+  font-size: var(--fs-label);
+  max-width: 70ch;
+  margin-bottom: var(--space-4);
+}
+
+.webhooks__form {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  max-width: 560px;
+}
+
+.webhooks__form input {
+  flex: 1;
+}
+
+.webhooks__result {
+  background: var(--ink-800);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  overflow-x: auto;
+  margin-bottom: var(--space-5);
+}
+
+.webhooks__history-title {
+  margin-bottom: var(--space-3);
+  font-size: var(--fs-h3);
+  color: var(--paper-200);
+}
