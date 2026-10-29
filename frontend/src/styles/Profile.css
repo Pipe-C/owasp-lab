@@ -1,0 +1,35 @@
+@import './tokens.css';
+
+.profile__intro {
+  color: var(--paper-200);
+  font-size: var(--fs-label);
+  max-width: 70ch;
+  margin-bottom: var(--space-4);
+}
+
+.profile__intro code {
+  font-family: var(--font-mono);
+  background: var(--ink-700);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.profile__success {
+  background: rgba(76, 154, 106, 0.15);
+  border: 1px solid var(--signal-ok);
+  color: var(--paper-50);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  font-size: var(--fs-label);
+  margin-bottom: var(--space-4);
+}
+
+.profile__form {
+  max-width: 420px;
+}
+
+.profile__role {
+  font-family: var(--font-mono);
+  color: var(--stamp-gold);
+  margin: 0;
+}
