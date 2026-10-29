@@ -1,0 +1,54 @@
+# Plan de automatización de OWASP ZAP (Automation Framework) para Fintrace.
+#
+# La guía del laboratorio pide un procedimiento MANUAL (Manual Explore, HUD,
+# breakpoints, Requester/Resend) como evidencia principal — ver
+# backend/VULNERABILITIES.md para la ruta exacta de cada exploit. Este plan
+# es un punto de partida opcional para un escaneo de referencia (spider +
+# passive scan) antes de pasar a la explotación manual; NO reemplaza la
+# Fase 2 manual que pide el numeral 3 de la guía.
+#
+# Uso: zap.sh -cmd -autorun zap/automation-plan.yaml
+# (con la app ya corriendo en http://localhost:5173 y la API en :4000)
+
+env:
+  contexts:
+    - name: fintrace
+      urls:
+        - 'http://localhost:5173'
+        - 'http://localhost:4000'
+      includePaths:
+        - 'http://localhost:5173.*'
+        - 'http://localhost:4000/api/.*'
+      excludePaths: []
+  parameters:
+    failOnError: false
+    progressToStdout: true
+
+jobs:
+  - type: spider
+    parameters:
+      context: fintrace
+      url: 'http://localhost:5173'
+      maxDuration: 5
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 2
+
+  # El escaneo activo automático es opcional: la guía evalúa explotación
+  # MANUAL con Requester/Resend. Actívalo solo como verificación adicional,
+  # y hazlo contra SECURITY_MODE=vulnerable para no perder tiempo en falsos
+  # negativos sobre la versión ya corregida.
+  - type: activeScan
+    parameters:
+      context: fintrace
+      policy: 'Default Policy'
+    excludePaths: []
+
+  - type: report
+    parameters:
+      template: traditional-html-plus
+      reportDir: '../docs/informe/zap-reports'
+      reportFile: 'fintrace-zap-report-{{yyyy}}-{{MM}}-{{dd}}'
+      reportTitle: 'Fintrace — Diagnóstico OWASP ZAP'
+      reportDescription: 'Laboratorio de Auditoría de Seguridad Web — I.U. Pascual Bravo'
