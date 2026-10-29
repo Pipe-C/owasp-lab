@@ -1,0 +1,29 @@
+services:
+  api:
+    build: ./backend
+    container_name: fintrace-api
+    ports:
+      - '4000:4000'
+    environment:
+      PORT: 4000
+      SECURITY_MODE: ${SECURITY_MODE:-vulnerable}
+      JWT_SECRET: ${JWT_SECRET:-fintrace-dev-secret-cambia-esto}
+      FRONTEND_ORIGIN: http://localhost:5173
+      DB_PATH: /app/data/fintrace.db
+    volumes:
+      - fintrace-db:/app/data
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    container_name: fintrace-web
+    ports:
+      - '5173:5173'
+    environment:
+      VITE_API_URL: http://localhost:4000
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  fintrace-db:

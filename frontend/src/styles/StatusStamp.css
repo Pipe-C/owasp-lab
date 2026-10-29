@@ -1,0 +1,51 @@
+@import './tokens.css';
+
+.status-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transform: rotate(-2deg);
+  line-height: 1;
+}
+
+.status-stamp__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.status-stamp__label {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-1) var(--space-2);
+}
+
+.status-stamp--ok {
+  color: var(--signal-ok);
+}
+.status-stamp--ok .status-stamp__ring {
+  stroke: var(--signal-ok);
+}
+
+.status-stamp--risk {
+  color: var(--signal-risk);
+}
+.status-stamp--risk .status-stamp__ring {
+  stroke: var(--signal-risk);
+}
+
+.status-stamp--warn {
+  color: var(--signal-warn);
+}
+.status-stamp--warn .status-stamp__ring {
+  stroke: var(--signal-warn);
+}

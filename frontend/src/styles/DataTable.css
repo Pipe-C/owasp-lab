@@ -1,0 +1,71 @@
+@import './tokens.css';
+
+.data-table__wrap {
+  background: var(--ink-800);
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-panel);
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-label);
+}
+
+.data-table th {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  color: var(--paper-200);
+  font-weight: 500;
+  border-bottom: var(--border-hairline);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--ink-700);
+  white-space: nowrap;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr {
+  animation: row-in 180ms ease-out both;
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.data-table__row--clickable {
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+.data-table__row--clickable:hover {
+  background: var(--ink-700);
+}
+
+.data-table__empty {
+  color: var(--paper-muted);
+  padding: var(--space-5);
+  text-align: center;
+  border: 1px dashed var(--ink-700);
+  border-radius: var(--radius-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-table tbody tr {
+    animation: none;
+  }
+}

@@ -1,0 +1,36 @@
+@import './tokens.css';
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: var(--border-hairline);
+}
+
+.topbar__title {
+  font-size: var(--fs-h2);
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-label);
+  color: var(--paper-200);
+}
+
+.topbar__role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  background: var(--ink-700);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  text-transform: lowercase;
+}

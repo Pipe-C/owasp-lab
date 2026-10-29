@@ -1,0 +1,136 @@
+@import './tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink-900);
+  color: var(--paper-50);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--stamp-gold);
+}
+
+/* Superficies del navegador — DESIGN.md §7 */
+::selection {
+  background: var(--stamp-gold);
+  color: var(--ink-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--stamp-gold);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-800);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-600);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stamp-gold-dim);
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--paper-50);
+  background: var(--ink-900);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--stamp-gold-dim);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.btn-primary {
+  background: var(--stamp-gold);
+  color: var(--ink-900);
+}
+.btn-primary:hover {
+  background: #d8ab4c;
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--paper-200);
+  border: var(--border-hairline);
+}
+.btn-ghost:hover {
+  border-color: var(--stamp-gold-dim);
+  color: var(--paper-50);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.field label {
+  font-size: var(--fs-label);
+  color: var(--paper-200);
+}
+
+.error-banner {
+  background: rgba(198, 85, 61, 0.15);
+  border: 1px solid var(--signal-risk);
+  color: var(--paper-50);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  font-size: var(--fs-label);
+  margin-bottom: var(--space-4);
+}

@@ -1,0 +1,37 @@
+@import './tokens.css';
+
+.security-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  font-size: var(--fs-small);
+  font-family: var(--font-mono);
+  border: 1px solid var(--ink-700);
+  color: var(--paper-200);
+}
+
+.security-mode__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.security-mode--vulnerable .security-mode__dot {
+  background: var(--signal-risk);
+  box-shadow: 0 0 0 3px rgba(198, 85, 61, 0.2);
+}
+.security-mode--vulnerable {
+  border-color: var(--signal-risk);
+  color: var(--paper-50);
+}
+
+.security-mode--patched .security-mode__dot {
+  background: var(--signal-ok);
+  box-shadow: 0 0 0 3px rgba(76, 154, 106, 0.2);
+}
+.security-mode--patched {
+  border-color: var(--signal-ok);
+  color: var(--paper-50);
+}

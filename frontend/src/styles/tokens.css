@@ -1,0 +1,43 @@
+:root {
+  /* Color — ver DESIGN.md §2 */
+  --ink-900: #0f1b2e;
+  --ink-800: #172438;
+  --ink-700: #223050;
+  --ink-600: #30415f;
+  --paper-50: #f3efe4;
+  --paper-200: #c7c0ac;
+  --paper-muted: #9aa3b5;
+  --stamp-gold: #c89b3c;
+  --stamp-gold-dim: #8f6f2a;
+  --signal-ok: #4c9a6a;
+  --signal-risk: #c6553d;
+  --signal-warn: #d6a24c;
+
+  /* Tipografía — DESIGN.md §3 */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --fs-display: 2.25rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.125rem;
+  --fs-body: 1rem;
+  --fs-label: 0.8125rem;
+  --fs-small: 0.75rem;
+
+  /* Forma — DESIGN.md §4 */
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow-panel: 0 4px 16px rgba(5, 10, 20, 0.35);
+  --border-hairline: 1px solid var(--ink-700);
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --rail-width: 240px;
+}
