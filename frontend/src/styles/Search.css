@@ -1,0 +1,18 @@
+@import './tokens.css';
+
+.search__form {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  max-width: 480px;
+}
+
+.search__form input {
+  flex: 1;
+}
+
+.search__echo {
+  color: var(--paper-200);
+  font-size: var(--fs-label);
+  margin-bottom: var(--space-4);
+}
